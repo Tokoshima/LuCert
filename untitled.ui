@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>583</width>
+    <height>549</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -512,13 +512,26 @@
      <string>Upload Excel Folder</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="btnExc">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>480</y>
+      <width>83</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Execute</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>583</width>
      <height>22</height>
     </rect>
    </property>

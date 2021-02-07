@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(583, 549)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.cmbFN = QtWidgets.QComboBox(self.centralwidget)
@@ -122,9 +122,12 @@ class Ui_MainWindow(object):
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(10, 60, 141, 17))
         self.label_5.setObjectName("label_5")
+        self.btnExc = QtWidgets.QPushButton(self.centralwidget)
+        self.btnExc.setGeometry(QtCore.QRect(470, 480, 83, 25))
+        self.btnExc.setObjectName("btnExc")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 583, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -221,6 +224,7 @@ class Ui_MainWindow(object):
         self.cmbLN.setItemText(25, _translate("MainWindow", "Z"))
         self.label_4.setText(_translate("MainWindow", "First Name Coloumn"))
         self.label_5.setText(_translate("MainWindow", "Upload Excel Folder"))
+        self.btnExc.setText(_translate("MainWindow", "Execute"))
 
 
 if __name__ == "__main__":
