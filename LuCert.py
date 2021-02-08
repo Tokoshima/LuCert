@@ -2,15 +2,18 @@ from qtUI import Ui_MainWindow
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from openpyxl import Workbook, load_workbook
 from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
+from PyQt5.QtCore import QDir
 import gettex
 import docx
 import openpyxl
 import sys,os
+import shutil
 
 
 
 class MyWindow(QMainWindow, Ui_MainWindow):
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         #self.initUI()
@@ -18,28 +21,32 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
         self.setupUi(self)
 
-        print("cek")
+
         self.btnExc.clicked.connect(self.exc_clicked)
+        self.btnUpload.clicked.connect(self.upload_clicked)
+
     def exc_clicked(self):
-        print("Ex")
         self.update()
 
-        #/home/louwster3000/Documents/LuCert
+        #/home/louwste()r3000/Documents/LuCert
         cmbCol_selected = self.cmbCol.currentText()
         os.chdir(os.path.abspath('Lists'))
+        #os.chdir(os.listdir(FILE_PATH))
         #/home/louwster3000/Documents/LuCert/Lists
         wb = load_workbook("List.xlsx")
         #print("Cek1")
         source = wb["Sheet1"]
+        if self.rdbSep.isChecked():
+            print("Is Checked")
         for cell in source['%c' % cmbCol_selected]:
 
             #/home/louwster3000/Documents/LuCert/Lists
             name =cell.value
             print(cell.value)
             if name is None:
-                print("Cell is invalid")
-            if not (isinstance(name, str))
-                print("Cell is not a Name!")
+                print("ERROR: Cell is invalid")
+            # if not (isinstance(name, str))
+            #     print("Cell is not a Name!")
             os.chdir(os.path.abspath('..'))
             #/home/louwster3000/Documents/LuCert
 
@@ -60,9 +67,34 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             else:
                 print('failed')
         os.chdir(os.path.abspath('..'))
+        #print(os.getcwd())
+
+    def upload_clicked(self):
         print(os.getcwd())
+        xlsxListDir = QFileDialog.getOpenFileName(self)
+        xlsxListDir = xlsxListDir[0]
+        shutil.copyfile(xlsxListDir,os.getcwd()+'/Lists/List.xlsx')
+        #os.chdir(os.listdir(FILE_PATH))
 
 
+        if not xlsxListDir.endswith('.xlsx'):
+            print("ERROR")
+
+
+    #     dialog = QFileDialog
+    #     dialog.setFileMode(QFileDialog.AnyFile)
+    #     dialog.setFilter(QDir.Files)
+    #
+    #     if dialog.exec_():
+    #         file_name = dialog.selectedFiles()
+    #
+    # if file_name[0].endswith('.py'):
+    #     with open(file_name[0], 'r') as f:
+    #         data = f.read()
+    #         self.textEditor.setPlainText(data)
+    #         f.close()
+    # else:
+    #     pass
     # def initUI(self):
     #     self.setGeometry(200, 200, 300, 300)
     #     self.setWindowTitle("Tech With Tim")
