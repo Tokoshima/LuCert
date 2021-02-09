@@ -30,6 +30,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
         #/home/louwste()r3000/Documents/LuCert
         cmbCol_selected = self.cmbCol.currentText()
+        cmbFN_selected = self.cmbFN.currentText()
         os.chdir(os.path.abspath('Lists'))
         #os.chdir(os.listdir(FILE_PATH))
         #/home/louwster3000/Documents/LuCert/Lists
@@ -38,35 +39,44 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         source = wb["Sheet1"]
         if self.rdbSep.isChecked():
             print("Is Checked")
-        for cell in source['%c' % cmbCol_selected]:
+            #for cell in source['%c' % cmbFN_selected]:
+                # for row_num in range(1,rows):
+                # sh['C{}'.format(row_num)] = '=CONCATENATE(A{},",",B{})'.format(row_num)
+                # wb.save(r"C:\\Users\\hp\\Desktop\\Uarch\\ConcatDemo.xlsx")
 
-            #/home/louwster3000/Documents/LuCert/Lists
-            name =cell.value
-            print(cell.value)
-            if name is None:
-                print("ERROR: Cell is invalid")
-            # if not (isinstance(name, str))
-            #     print("Cell is not a Name!")
+# wk.save(r"C:\\Users\\hp\\Desktop\\Uarch\\ConcatDemo.xlsx")
+#
+#         else:
+            for cell in source['%c' % cmbCol_selected]:
+
+                #/home/louwster3000/Documents/LuCert/Lists
+                name =cell.value
+                print(cell.value)
+                if name is None:
+                    print("ERROR: Cell is invalid")
+                # if not (isinstance(name, str))
+                #     print("Cell is not a Name!")
+                os.chdir(os.path.abspath('..'))
+                #/home/louwster3000/Documents/LuCert
+
+                doc = docx.Document('masterDoc.docx')
+                p1 = doc.add_paragraph('%s' % name)
+                p1.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+
+                if os.path.exists(os.path.abspath("Certs")):
+                    os.chdir(os.path.abspath("Certs"))
+                    #/home/louwster3000/Documents/LuCert/Certs
+                    doc.save('%s.docx' % cell.value)
+
+
+
+                    #os.chdir(os.path.abspath('Lists'))
+                    print(os.getcwd())
+                else:
+                    print('failed')
             os.chdir(os.path.abspath('..'))
-            #/home/louwster3000/Documents/LuCert
 
-            doc = docx.Document('masterDoc.docx')
-            p1 = doc.add_paragraph('%s' % name)
-            p1.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
-
-
-            if os.path.exists(os.path.abspath("Certs")):
-                os.chdir(os.path.abspath("Certs"))
-                #/home/louwster3000/Documents/LuCert/Certs
-                doc.save('%s.docx' % cell.value)
-
-
-
-                #os.chdir(os.path.abspath('Lists'))
-                print(os.getcwd())
-            else:
-                print('failed')
-        os.chdir(os.path.abspath('..'))
         #print(os.getcwd())
 
     def upload_clicked(self):
