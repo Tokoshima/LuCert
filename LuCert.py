@@ -4,11 +4,13 @@ from openpyxl import Workbook, load_workbook
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 from PyQt5.QtCore import QDir
+from docx2pdf import convert
 import gettex
 import docx
 import openpyxl
 import sys,os
 import shutil
+import itertools as it
 
 
 
@@ -31,6 +33,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         #/home/louwste()r3000/Documents/LuCert
         cmbCol_selected = self.cmbCol.currentText()
         cmbFN_selected = self.cmbFN.currentText()
+        cmbLN_selected = self.cmbLN.currentText()
         os.chdir(os.path.abspath('Lists'))
         #os.chdir(os.listdir(FILE_PATH))
         #/home/louwster3000/Documents/LuCert/Lists
@@ -39,15 +42,40 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         source = wb["Sheet1"]
         if self.rdbSep.isChecked():
             print("Is Checked")
-            #for cell in source['%c' % cmbFN_selected]:
-                # for row_num in range(1,rows):
-                # sh['C{}'.format(row_num)] = '=CONCATENATE(A{},",",B{})'.format(row_num)
-                # wb.save(r"C:\\Users\\hp\\Desktop\\Uarch\\ConcatDemo.xlsx")
+            for cell1,cell2 in zip(source[cmbFN_selected],source[cmbLN_selected]):
+            #for row_num in range(1,rows):
+                name = cell1.value+" "+cell2.value
+                print(cell1.value+" "+cell2.value)
+                if name is None:
+                    print("ERROR: Cell is invalid")
+                os.chdir(os.path.abspath('..'))
+                #/home/louwster3000/Documents/LuCert
+
+                doc = docx.Document('masterDoc.docx')
+                p1 = doc.add_paragraph(name)
+                p1.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+                if os.path.exists(os.path.abspath("Certs")):
+                    os.chdir(os.path.abspath("Certs"))
+                    #/home/louwster3000/Documents/LuCert/Certs
+                    doc.save('%s.docx' % name)
+                    convert('%s.docx' % name,'%s.pdf' % name)
+
+
+
+                    #os.chdir(os.path.abspath('Lists'))
+                    print(os.getcwd())
+                else:
+                    print('failed')
+
+
+                #wb['C{}'.format(cell)] = '=CONCATENATE(A{},B{})'.format(cell)
+                wb.save("List.xlsx")
 
 # wk.save(r"C:\\Users\\hp\\Desktop\\Uarch\\ConcatDemo.xlsx")
-#
-#         else:
-            for cell in source['%c' % cmbCol_selected]:
+            os.chdir(os.path.abspath('..'))
+        else:
+            for cell in source[cmbCol_selected]:
 
                 #/home/louwster3000/Documents/LuCert/Lists
                 name =cell.value
@@ -60,7 +88,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 #/home/louwster3000/Documents/LuCert
 
                 doc = docx.Document('masterDoc.docx')
-                p1 = doc.add_paragraph('%s' % name)
+                p1 = doc.add_paragraph(name)
                 p1.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
 
@@ -68,6 +96,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                     os.chdir(os.path.abspath("Certs"))
                     #/home/louwster3000/Documents/LuCert/Certs
                     doc.save('%s.docx' % cell.value)
+                    convert('%s.docx' % name,'%s.pdf' % name)
 
 
 
