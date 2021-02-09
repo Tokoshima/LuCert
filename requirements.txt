@@ -1,0 +1,5 @@
+openpyxl==3.0.6
+python_docx==0.8.10
+docx==0.2.4
+docx2pdf==0.1.7
+PyQt5==5.15.2
