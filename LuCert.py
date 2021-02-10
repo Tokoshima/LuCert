@@ -5,10 +5,9 @@ from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 from PyQt5.QtCore import QDir
 from docx2pdf import convert
-import gettex
-import docx
 import openpyxl
-import sys,os
+import sys
+import os
 import shutil
 import itertools as it
 
