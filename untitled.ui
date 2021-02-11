@@ -6,653 +6,850 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>381</width>
-    <height>481</height>
+    <width>487</width>
+    <height>564</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">MainWindow{	
+	background-color: qlineargradient(spread:pad, x1:0.395, y1:0.011, x2:0.415627, y2:0.988, stop:0.204082 rgba(0, 141, 206, 255), stop:0.710784 rgba(112, 124, 171, 255));
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QComboBox" name="cmbFN">
+   <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>200</y>
-      <width>86</width>
-      <height>25</height>
+      <x>0</x>
+      <y>0</y>
+      <width>481</width>
+      <height>521</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>Ubuntu</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <item>
-     <property name="text">
-      <string>A</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>B</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>C</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>D</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>E</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>F</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>G</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>H</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>I</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>J</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>K</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>L</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>M</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>N</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>O</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>P</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Q</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>R</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>S</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>T</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>U</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>V</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>W</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>X</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Y</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Z</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QRadioButton" name="rdbSep">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>160</y>
-      <width>231</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Ubuntu</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Seperate Name and Last Name</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>10</y>
-      <width>101</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Ubuntu</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
+     <enum>QFrame::StyledPanel</enum>
     </property>
-    <property name="text">
-     <string>Excel Sheet</string>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>481</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Fira Sans</family>
+       <pointsize>20</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="text">
+      <string>&lt;strong&gt;Lu&lt;/strong&gt;&lt;span style=&quot;color: blue&quot;&gt;Cert&lt;/span&gt;</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>60</y>
+       <width>481</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+	
+	
+
+	color: rgb(16, 41, 163);
+}</string>
+     </property>
+     <property name="title">
+      <string>Step 1:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>161</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Fira Sans</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Upload Excel File</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>151</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Fira Sans</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Upload docx file</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="txeXl">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>40</y>
+        <width>171</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>6</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="txeDocx">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>80</y>
+        <width>171</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>6</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnUploadXl">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>40</y>
+        <width>121</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Fira Sans</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Upload</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnUploadDocx">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>80</y>
+        <width>121</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Fira Sans</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Upload</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>220</y>
+       <width>481</width>
+       <height>221</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+	
+	
+
+	color: rgb(16, 41, 163);
+}</string>
+     </property>
+     <property name="title">
+      <string>Step 2:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>201</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Fira Sans</family>
+        <pointsize>11</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Name and lastname Coloumn</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmbCol">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>201</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Fira Sans</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>A</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>B</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>C</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>D</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>E</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>F</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>G</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>H</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>I</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>J</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>K</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>L</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>M</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>N</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>O</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>P</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Q</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>R</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>S</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>T</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>U</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>V</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>X</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Y</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Z</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>30</y>
+        <width>20</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="rdbSep">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>30</y>
+        <width>290</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Fira Sans</family>
+        <pointsize>11</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Seperate Name and Last Name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>70</y>
+        <width>201</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Fira Sans</family>
+        <pointsize>11</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>First Name Coloumn</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>130</y>
+        <width>172</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Fira Sans</family>
+        <pointsize>11</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Last Name Coloumn</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmbFN">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>100</y>
+        <width>201</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Fira Sans</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>A</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>B</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>C</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>D</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>E</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>F</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>G</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>H</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>I</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>J</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>K</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>L</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>M</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>N</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>O</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>P</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Q</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>R</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>S</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>T</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>U</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>V</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>X</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Y</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Z</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="cmbLN">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>160</y>
+        <width>201</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Fira Sans</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>A</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>B</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>C</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>D</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>E</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>F</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>G</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>H</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>I</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>J</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>K</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>L</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>M</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>N</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>O</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>P</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Q</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>R</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>S</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>T</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>U</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>V</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>X</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Y</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Z</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="btnExc">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>470</y>
+       <width>461</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Fira Sans</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Execute</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QComboBox" name="cmbCol">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>130</y>
-      <width>86</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Ubuntu</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <item>
-     <property name="text">
-      <string>A</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>B</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>C</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>D</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>E</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>F</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>G</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>H</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>I</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>J</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>K</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>L</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>M</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>N</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>O</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>P</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Q</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>R</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>S</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>T</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>U</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>V</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>W</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>X</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Y</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Z</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>130</y>
-      <width>201</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Ubuntu</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Name and lastname Coloumn</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>230</y>
-      <width>131</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Ubuntu</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Last Name Coloumn</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="cmbLN">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>230</y>
-      <width>86</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Ubuntu</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <item>
-     <property name="text">
-      <string>A</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>B</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>C</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>D</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>E</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>F</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>G</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>H</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>I</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>J</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>K</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>L</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>M</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>N</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>O</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>P</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Q</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>R</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>S</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>T</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>U</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>V</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>W</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>X</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Y</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Z</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>200</y>
-      <width>131</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Ubuntu</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>First Name Coloumn</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>60</y>
-      <width>141</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Ubuntu</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Upload Excel Folder</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnExc">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>380</y>
-      <width>83</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Execute</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnUpload">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>50</y>
-      <width>83</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Ubuntu</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Upload</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>381</width>
-     <height>22</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

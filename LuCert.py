@@ -2,10 +2,12 @@ from qtUI import Ui_MainWindow
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from openpyxl import Workbook, load_workbook
 from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox, QErrorMessage
 from PyQt5.QtCore import QDir
 from docx2pdf import convert
 import openpyxl
+import platform
+import docx
 import sys
 import os
 import shutil
@@ -17,146 +19,156 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        #self.initUI()
-        #self.setupUi(self)
+        self.setWindowTitle("LuCert")
 
         self.setupUi(self)
 
+        global emsg
+        emsg = QtWidgets.QErrorMessage(self)
+        emsg.setWindowModality(QtCore.Qt.WindowModal)
 
+        self.rdbSep.toggled.connect(self.onClicked)
         self.btnExc.clicked.connect(self.exc_clicked)
-        self.btnUpload.clicked.connect(self.upload_clicked)
+        self.btnUploadXl.clicked.connect(self.upload_clicked)
+        self.btnUploadDocx.clicked.connect(self.uploadDocx_clicked)
+        self.cmbFN.setEnabled(False)
+        self.cmbLN.setEnabled(False)
+
+    def onClicked(self):
+        rdbSep = self.sender()
+        if rdbSep.isChecked():
+            self.cmbFN.setEnabled(True)
+            self.cmbLN.setEnabled(True)
 
     def exc_clicked(self):
         self.update()
 
-        #/home/louwste()r3000/Documents/LuCert
         cmbCol_selected = self.cmbCol.currentText()
-        cmbFN_selected = self.cmbFN.currentText()
-        cmbLN_selected = self.cmbLN.currentText()
+        print("1 "+os.getcwd())
         os.chdir(os.path.abspath('Lists'))
-        #os.chdir(os.listdir(FILE_PATH))
-        #/home/louwster3000/Documents/LuCert/Lists
-        wb = load_workbook("List.xlsx")
-        #print("Cek1")
-        source = wb["Sheet1"]
-        if self.rdbSep.isChecked():
-            print("Is Checked")
-            for cell1,cell2 in zip(source[cmbFN_selected],source[cmbLN_selected]):
-            #for row_num in range(1,rows):
-                name = cell1.value+" "+cell2.value
-                print(cell1.value+" "+cell2.value)
-                if name is None:
-                    print("ERROR: Cell is invalid")
-                os.chdir(os.path.abspath('..'))
-                #/home/louwster3000/Documents/LuCert
+        print("2 "+os.getcwd())
 
+        wb = load_workbook("List.xlsx")
+        source = wb.worksheets[0]
+
+        if self.rdbSep.isChecked():
+            print("3 "+os.getcwd())
+            cmbFN_selected = self.cmbFN.currentText()
+            cmbLN_selected = self.cmbLN.currentText()
+
+            for cell1,cell2 in zip(source[cmbFN_selected],source[cmbLN_selected]):
+
+                name = cell1.value+" "+cell2.value
+                if cell1.value is None or cell2.value is None:
+                    emsg.setWindowTitle("Cell contains nothing")
+                    emsg.showMessage("The coloumn contains nothing, please correct in xlsx file!")
+
+                os.chdir(os.path.abspath('..'))
+
+                print("4 "+os.getcwd())
                 doc = docx.Document('masterDoc.docx')
                 p1 = doc.add_paragraph(name)
                 p1.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
                 if os.path.exists(os.path.abspath("Certs")):
+                    print("5 "+os.getcwd())
                     os.chdir(os.path.abspath("Certs"))
-                    #/home/louwster3000/Documents/LuCert/Certs
+
                     doc.save('%s.docx' % name)
-                    convert('%s.docx' % name,'%s.pdf' % name)
 
+                    if platform.system() == 'Windows':
+                        convert('%s.docx' % name,'%s.pdf' % name)
+                    else:
+                        print("Not windows")
 
-
-                    #os.chdir(os.path.abspath('Lists'))
-                    print(os.getcwd())
+                    print("6 "+os.getcwd())
                 else:
                     print('failed')
 
-
-                #wb['C{}'.format(cell)] = '=CONCATENATE(A{},B{})'.format(cell)
                 wb.save("List.xlsx")
 
-# wk.save(r"C:\\Users\\hp\\Desktop\\Uarch\\ConcatDemo.xlsx")
             os.chdir(os.path.abspath('..'))
-        else:
-            for cell in source[cmbCol_selected]:
+            print("7 "+os.getcwd())
 
-                #/home/louwster3000/Documents/LuCert/Lists
+        else:
+
+            for cell in source[cmbCol_selected]:
+                print("8 "+os.getcwd())
                 name =cell.value
                 print(cell.value)
-                if name is None:
-                    print("ERROR: Cell is invalid")
-                # if not (isinstance(name, str))
-                #     print("Cell is not a Name!")
-                os.chdir(os.path.abspath('..'))
-                #/home/louwster3000/Documents/LuCert
 
+                if name is None:
+                    emsg.setWindowTitle("Cell contains nothing")
+                    emsg.showMessage("The coloumn contains nothing, please correct in xlsx file!")
+
+                os.chdir(os.path.abspath('..'))
+
+                print("9 "+os.getcwd())
                 doc = docx.Document('masterDoc.docx')
                 p1 = doc.add_paragraph(name)
                 p1.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
-
                 if os.path.exists(os.path.abspath("Certs")):
+                    print("10 "+os.getcwd())
+
                     os.chdir(os.path.abspath("Certs"))
-                    #/home/louwster3000/Documents/LuCert/Certs
+
                     doc.save('%s.docx' % cell.value)
-                    convert('%s.docx' % name,'%s.pdf' % name)
 
+                    if platform.system() == 'Windows':
+                        convert('%s.docx' % name,'%s.pdf' % name)
+                    else:
+                        print("Not windows")
 
-
-                    #os.chdir(os.path.abspath('Lists'))
-                    print(os.getcwd())
+                    print("11 "+os.getcwd())
                 else:
                     print('failed')
+
             os.chdir(os.path.abspath('..'))
 
-        #print(os.getcwd())
+            print("12 "+os.getcwd())
+
+    def uploadDocx_clicked(self):
+        print("13 "+os.getcwd())
+        docxDir = QFileDialog.getOpenFileName(self)
+        docxDir = docxDir[0]
+        self.txeDocx.setText(docxDir)
+        shutil.copyfile(docxDir,os.getcwd()+'masterDoc.docx')
+        print("14 "+os.getcwd())
+
+        if docxDir is None:
+            emsg.setWindowTitle("No Input")
+            emsg.showMessage("The chosen file contains nothing")
+
+        if docxDir == '':
+            emsg.setWindowTitle("No Input")
+            emsg.showMessage("The chosen file contains nothing")
+
+        if not docxDir.endswith('.docx'):
+            #print("ERROR")
+            emsg.setWindowTitle("Wrong file")
+            emsg.showMessage("The chosen file is not in .docx format!")
 
     def upload_clicked(self):
-        print(os.getcwd())
+        print("15 "+os.getcwd())
         xlsxListDir = QFileDialog.getOpenFileName(self)
         xlsxListDir = xlsxListDir[0]
+        self.txeXl.setText(xlsxListDir)
         shutil.copyfile(xlsxListDir,os.getcwd()+'/Lists/List.xlsx')
-        #os.chdir(os.listdir(FILE_PATH))
+        print("16 "+os.getcwd())
 
+        if xlsxListDir is None:
+            emsg.setWindowTitle("No Input")
+            emsg.showMessage("The chosen file contains nothing")
+
+        if xlsxListDir == '':
+            emsg.setWindowTitle("No Input")
+            emsg.showMessage("The chosen file contains nothing")
 
         if not xlsxListDir.endswith('.xlsx'):
-            print("ERROR")
+            emsg.setWindowTitle("Wrong file")
+            emsg.showMessage("The chosen file is not in .xlsx format!")
 
-
-    #     dialog = QFileDialog
-    #     dialog.setFileMode(QFileDialog.AnyFile)
-    #     dialog.setFilter(QDir.Files)
-    #
-    #     if dialog.exec_():
-    #         file_name = dialog.selectedFiles()
-    #
-    # if file_name[0].endswith('.py'):
-    #     with open(file_name[0], 'r') as f:
-    #         data = f.read()
-    #         self.textEditor.setPlainText(data)
-    #         f.close()
-    # else:
-    #     pass
-    # def initUI(self):
-    #     self.setGeometry(200, 200, 300, 300)
-    #     self.setWindowTitle("Tech With Tim")
-    #
-    #     self.label = QtWidgets.QLabel(self)
-    #     self.label.setText("my first label!")
-    #
-    #     self.label.move(50,50)
-    #     self.b1 = QtWidgets.QPushButton(self)
-    #     self.b1.setText("click me!")
-    #     self.b1.clicked.connect(self.button_clicked)
-    #
-    # def update(self):
-    #     self.label.adjustSize()
-#
-# def window():
-#     app = QApplication(sys.argv)
-#     win = MyWindow()
-#     win.show()
-#
-#
-#     sys.exit(app.exec_())
-#
-# window()
 
 if __name__ == "__main__":
     import sys
@@ -167,11 +179,3 @@ if __name__ == "__main__":
     # ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
-
-    #name =""
-    #doc = docx.Document('masterDoc.docx')
-    #p1 = doc.add_paragraph('%s' % name)
-    #p1.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    #doc.save('Out.docx')
-    #print(gettex.getText('Out.docx'))

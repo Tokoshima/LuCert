@@ -1,6 +1,7 @@
 import subprocess
 import sys
 #subprocess.check_call([sys.executable, "-m", "pip", "install", "manim"])
+
 subprocess.check_call([sys.executable, "-m", "pip", "install","openpyxl"])
 subprocess.check_call([sys.executable, "-m", "pip", "install","python-docx"])
 subprocess.check_call([sys.executable, "-m", "pip", "install", "docx"])
