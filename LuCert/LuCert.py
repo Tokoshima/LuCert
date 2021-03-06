@@ -133,7 +133,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         docxDir = QFileDialog.getOpenFileName(self)
         docxDir = docxDir[0]
         self.txeDocx.setText(docxDir)
-        shutil.copyfile(docxDir,os.getcwd()+'masterDoc.docx')
+        if not docxDir == os.getcwd()+'masterDoc.docx':
+            shutil.copyfile(docxDir,os.getcwd()+'masterDoc.docx')
         print("14 "+os.getcwd())
 
         if docxDir is None:
@@ -154,7 +155,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         xlsxListDir = QFileDialog.getOpenFileName(self)
         xlsxListDir = xlsxListDir[0]
         self.txeXl.setText(xlsxListDir)
-        shutil.copyfile(xlsxListDir,os.getcwd()+'/Lists/List.xlsx')
+        if not xlsxListDir == os.getcwd()+'/Lists/List.xlsx':
+            shutil.copyfile(xlsxListDir,os.getcwd()+'/Lists/List.xlsx')
         print("16 "+os.getcwd())
 
         if xlsxListDir is None:
