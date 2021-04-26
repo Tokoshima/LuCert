@@ -1,5 +1,6 @@
 from qtUI import Ui_MainWindow
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.shared import Pt
 from openpyxl import Workbook, load_workbook
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox, QErrorMessage
@@ -66,7 +67,13 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 os.chdir(os.path.abspath('..'))
 
                 print("4 "+os.getcwd())
+
                 doc = docx.Document('masterDoc.docx')
+
+                style = document.styles['Normal']
+                font = style.font
+                font.name = 'Arial'
+                font.size = Pt(13)
                 p1 = doc.add_paragraph(name)
                 p1.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
@@ -105,6 +112,13 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
                 print("9 "+os.getcwd())
                 doc = docx.Document('masterDoc.docx')
+
+                style = doc.styles['Normal']
+                font = style.font
+                font.name = 'Arial'
+                font.size = Pt(15)
+
+
                 p1 = doc.add_paragraph(name)
                 p1.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
@@ -135,6 +149,10 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.txeDocx.setText(docxDir)
         if not docxDir == os.getcwd()+'masterDoc.docx':
             shutil.copyfile(docxDir,os.getcwd()+'masterDoc.docx')
+            print("asdsadsdsasd")
+        else:
+
+            print("iiukukukukukuk")
         print("14 "+os.getcwd())
 
         if docxDir is None:
@@ -157,6 +175,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.txeXl.setText(xlsxListDir)
         if not xlsxListDir == os.getcwd()+'/Lists/List.xlsx':
             shutil.copyfile(xlsxListDir,os.getcwd()+'/Lists/List.xlsx')
+        
         print("16 "+os.getcwd())
 
         if xlsxListDir is None:
